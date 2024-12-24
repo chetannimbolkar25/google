@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Facts</title>
+    <style>
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+#cat-fact {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#fact-text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#new-fact-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#new-fact-button:hover {
+    background-color: #3e8e41;
+}
+    </style>
+    <script>
+const facts = [
+  "Cats have 32 muscles in each ear, allowing them to rotate their ears 180 degrees.",
+  "A group of cats is called a clowder.",
+  "The world's oldest cat lived to be 38 years old.",
+  "Cats have a third eyelid called a nictitating membrane, which helps protect their eyes.",
+  "Cats can purr at a frequency of up to 25 hertz, which is thought to have healing properties.",
+  "The average cat sleeps for 15 hours a day.",
+  "Cats have 230 bones in their bodies, which is more than humans.",
+  "A cat's nose is unique, like a human fingerprint.",
+  "Cats can see in the dark six to eight times better than humans.",
+  "The domestic cat is descended from the African wildcat."
+];
+
+const factText = document.getElementById("fact-text");
+const newFactButton = document.getElementById("new-fact-button");
+
+newFactButton.addEventListener("click", () => {
+  const randomIndex = Math.floor(Math.random() * facts.length);
+  factText.textContent = facts[randomIndex];
+});
+
+// Initial display of a fact
+newFactButton.click(); // Simulate a click to show a fact on page load
+    </script>
+</head>
+<body>
+    <div id="cat-fact">
+        <h2>Random Cat Fact</h2>
+        <p id="fact-text"></p>
+        <button id="new-fact-button">New Fact</button>
+    </div>
+</body>
+</html>
